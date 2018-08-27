@@ -1,0 +1,31 @@
+{
+  "name": "koa2home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "4.6.0",
+    "koa": "2.5.0",
+    "koa-router": "7.4.0",
+    "koa-static": "4.0.2",
+    "koa-swig": "2.2.1",
+    "path": "0.12.7",
+    "request": "2.85.0",
+    "request-promise": "4.2.2",
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-watch": "^5.0.0"
+  }
+}

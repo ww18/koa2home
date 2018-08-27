@@ -1,0 +1,7 @@
+{
+  "name"        : "worker",
+  "script"      : "app.js",
+  "watch"       : true,
+  "instances"  : "max",
+  "exec_mode"  : "cluster"
+}

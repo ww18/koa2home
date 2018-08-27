@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="http://localhost:6080/dist/bundle.css?v=ac601b0f9d0e668f2a35">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/count.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<ul id="list">
+
+</ul>
+<script>
+    function getData(){
+        axios.get('/getBest', {
+            params: {
+                opt: 1
+            }
+        })
+        .then(function (response) {
+            let html = '', data = response.data;
+            for(let i of data){
+                html += `<li class="flex-h"><span class="flex-item">${i.phone}</span><span class="flex-item">策略数: <span class="timer" data-to="${i.strategyNum}"></span></span><span class="flex-item">盈利: <span class="timer" data-to="${i.profile}">${i.profile}</span></span></li>`;
+            }
+
+            $('#list').html(html);
+            $('.timer').each(function(){
+                var $this = $(this);
+                $this.countTo();
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    }
+    getData();
+</script>
+
+{% endblock %}
